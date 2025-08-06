@@ -1,3 +1,4 @@
+using A1ReConsole.API.Middleware;
 using A1ReConsole.Core;
 using A1ReConsole.Infrastructure;
 
@@ -11,6 +12,8 @@ builder.Services.AddCore();
 builder.Services.AddControllers();
 
 var app = builder.Build();
+
+app.UseExceptionHandlingMiddleware();
 
 // Routing
 app.UseRouting();
